@@ -1,7 +1,6 @@
 # co2-for-cars
 # Obtaining co2 different  cars by using engine size.
 # co2-for-cars
-#Obtaining co2 different  cars by using engine size.
 
 # import libraries
 import numpy as np
