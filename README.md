@@ -30,7 +30,7 @@ sns.heatmap(df.corr(),annot=True)
 
 x = df.drop("out1",axis=1)
 x = x.drop("cylandr",axis=1)
-x = x.drop("engine",axis=1)
+x = x.drop("fuelcomb",axis=1)
 y = df.out1
 
 # Split the data into training and testing sets
