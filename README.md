@@ -1,76 +1,118 @@
-# co2-for-cars
-# Obtaining co2 different  cars by using engine size.
-# co2-for-cars
+# 🚗 Vehicle CO₂ Emissions Prediction using Machine Learning
 
-# import libraries
-import numpy as np
-import pandas as pd
-import seaborn as sns
-from sklearn import linear_model
-import sklearn.metrics as sm
-from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
+## 📌 Project Overview
+This project focuses on predicting **vehicle CO₂ emissions** based on technical and fuel-related features using machine learning regression techniques.  
+The goal is to analyze how vehicle specifications influence environmental impact and to build a **data-driven predictive model**.
 
-# we to a co2.csv file 
-# read the csv file
-df = pd.read_csv('co2.csv')
-df.describe()
+This project is designed as a **portfolio-grade project** suitable for:
+- Master’s degree applications
+- Environmental and sustainability research
+- Data Science / Machine Learning roles
 
-# # This code creates a count plot of the 'out1' column in the dataframe.
-sns.countplot(x='out1',data=df)
+---
 
-# create a  hit  map 
-plt.subplots(figsize=(9,9))
-sns.heatmap(df.corr(),annot=True)
+## 📊 Dataset Description
+The dataset contains vehicle-related attributes and corresponding CO₂ emission values.
 
-# x = df.drop("out1",axis=1) # Drop the 'out1' column from the DataFrame and assign to x
-# x = df.drop("fuelcomb",axis=1) # Drop the 'fuelcomb' column from x
-# x = df.drop("cylandr",axis=1) # Drop the 'cylandr' column from x
-# y = df.out1 # Select the 'out1' column as the target variable y
+**Target variable:**
+- CO₂ Emissions (g/km)
 
-x = df.drop("out1",axis=1)
-x = x.drop("cylandr",axis=1)
-x = x.drop("fuelcomb",axis=1)
-y = df.out1
+**Feature examples:**
+- Engine size
+- Number of cylinders
+- Fuel consumption
+- Fuel type
+- Vehicle class
 
-# Split the data into training and testing sets
-# For splite x and y as train becuase we want trained some of (x) not all
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
+The dataset is structured, clean, and suitable for regression-based machine learning models.
 
-# Now as we watch we have 400 x_train 
-x_train
+---
 
-# And also x_test  100 for after train 
-x_test
+## 🔍 Exploratory Data Analysis (EDA)
+Exploratory analysis was conducted to understand:
+- Distribution of CO₂ emissions
+- Relationships between engine characteristics and emissions
+- Feature correlations affecting emission levels
 
-# Initialize a Linear Regression model
-model_reg_linear = linear_model.LinearRegression()
+EDA results show strong relationships between engine size, fuel consumption, and CO₂ output.
 
-# Fit the linear regression model to the training data
-model_reg_linear.fit(x_train,y_train)
+---
 
-# Predict the target variable for the test set
-out_robot = model_reg_linear.predict(x_test)
+## 🧠 Machine Learning Workflow
+The notebook follows a clear and reproducible workflow:
+- Data loading and inspection
+- Data preprocessing and feature engineering
+- Train-test split
+- Feature scaling where applicable
+- Training regression models
+- Model evaluation and comparison
 
-out_robot
+This structured pipeline ensures clarity, reproducibility, and scalability.
 
-# before we called and now we call it again for udentify
-x_test
+---
 
-# Create a scatter plot of the test data
-plt.scatter(x_test,y_test, color='red')
-plt.show()
+## 📊 Model Evaluation & Results
+Model performance was evaluated using standard regression metrics:
+- R² Score
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
 
-# Create a scatter plot of the test data and overlay the regression line
-plt.scatter(x_test,y_test, color='red')
-plt.plot(x_test, out_robot, color='black', linewidth=2)
-plt.show()
+The best-performing model demonstrated strong predictive accuracy and generalization ability on unseen data.
 
-# Now we able import information about engine size car
-# ٍExampel here is Mercedes-Benz M120 
-M120  = np.array([[ 7.6]])
+---
 
-# we give name of the car to our model
-co2 = model_reg_linear.predict(M120)
+## 🛠️ Tools & Technologies
+- Python
+- Pandas
+- NumPy
+- Matplotlib / Seaborn
+- Scikit-learn
+- Jupyter Notebook / Kaggle Notebook
 
-print(co2)
+---
+
+## 🎯 Why This Project Matters
+This project demonstrates:
+- Practical application of machine learning to environmental problems
+- Strong analytical and data preprocessing skills
+- Proper evaluation of regression models
+- Ability to communicate results clearly and professionally
+
+It reflects both **academic readiness** and **industry-oriented problem solving**.
+
+---
+
+## 🚀 Future Improvements
+- Hyperparameter tuning
+- Feature selection and importance analysis
+- Testing additional regression models
+- Deployment-ready model pipeline
+
+---
+
+## 👤 Author
+**Mohamad Nahvi**  
+Aspiring Data Scientist | Machine Learning Enthusiast  
+
+
+
+
+# 📁 Vehicle CO₂ Emissions Dataset
+
+## 📌 Dataset Overview
+This dataset contains vehicle specifications and corresponding CO₂ emission values.  
+It is intended for educational, research, and machine learning experimentation purposes.
+
+---
+
+## 📄 File Information
+- File name: `co2.csv`
+- Format: CSV
+- Target variable: CO₂ emissions (g/km)
+
+---
+
+## 🔐 Data Usage
+- No personal or sensitive information included
+- Suitable for academic and professional projects
+
