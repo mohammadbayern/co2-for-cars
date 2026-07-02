@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# TensorFlow
+logs/
+checkpoints/
+*.h5
+*.keras
+
+# PyTorch
+*.pth
+*.pt
+
+# OS
+.DS_Store
+Thumbs.db
